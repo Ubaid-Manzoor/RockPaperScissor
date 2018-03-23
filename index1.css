@@ -3,6 +3,9 @@ html,body{
 	padding: 0;
 	height: 100%;
 }
+body{
+	  background: linear-gradient(-50deg,#b11414, #07232b);
+}
 .pcicon_S,.usericon_S,.pcicon_R,.usericon_R,.pcicon_P,.usericon_P{
 	border-radius: 50%;
 	position: absolute;
