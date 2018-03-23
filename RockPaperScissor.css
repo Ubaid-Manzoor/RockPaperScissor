@@ -1,0 +1,80 @@
+html,body{
+	margin: 0;
+	padding: 0; 
+}
+html{
+	  background: linear-gradient(-30deg,#a50b0b, #5436ce);
+	  height: 100%;
+}
+.heading{
+	display: block;
+	font-family: Courier;
+	margin: 10px auto;
+	text-align: center;
+	line-height: 100px; 
+	font-size: 40px;
+	color: white;
+	background-color: #251f1f;
+}
+.male,.female{
+	display: inline-block;
+	width: 45%;
+	color: #ff968e;
+}
+.field{
+	width: 40%;
+	height: 300px;
+	margin: 60px auto;
+	font-family: arial, helvetica, sans-serif;;
+	/*background-color: yellow;*/
+/*	opacity: 1;*/
+}
+.name,.gender{
+	display: block;
+	line-height: 30px;
+	font-weight: 700; 
+	width: 100%;
+	letter-spacing: 3px;
+	text-align: center;
+	/*background-color: green;*/
+	margin: 0 auto;
+	padding-bottom: 3%;
+	border-bottom: 1px solid #d6d6d6;
+}
+.name,.gender,.playgame{
+	margin-bottom: 5%;
+	/*background-color: red;*/
+	color: black;
+}
+.playgame{
+	display: block;
+	margin:auto;
+	height: 40px;
+	width: 50%;
+	background-color: #4CAF50;
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: white;
+	font-family: inherit;
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px; 
+		border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.playgame:hover{
+	border: outset;
+	border: 1px solid #4CAF50;
+	color: black;
+}
+.IPtext{
+	height: 30px;
+	width: 80%;
+	font-size: 140%;
+}
+.Wgender,.username{
+	font-size: 130%;
+	color: #ececec;
+}
