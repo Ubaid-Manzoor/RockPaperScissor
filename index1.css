@@ -1,5 +1,5 @@
 html,body{
-	margin 0;
+	margin :0;
 	padding: 0;
 }
 .volumebutton{
@@ -46,4 +46,79 @@ html,body{
 	position: relative;
 	top: 100px;
 	text-align:center;
+}html,body{
+	margin 0;
+	padding: 0;
+}
+.volumebutton{
+	/*display: block;*/
+	width: 5%;
+	height: 5%;
+	background-color: red;
+	border-radius: 50%;
+	float: right;
+}
+.Options{
+	position: relative;
+	clear: both;
+	text-align: center;
+	border-bottom: 2px solid red;
+	padding: 0% 1% 2% 1%;
+	margin: 0% 0 1% 0;
+}
+.rock,.paper,.scissor,.reset{
+	border: 2px solid red;
+	display: inline-block;
+	width: 14%;
+	margin-right: 5%;
+	border-radius: 50%;
+}
+.Players{
+	/*position: relative;*/
+}
+.computer,.user{
+	position: absolute;
+	width: 18%;
+	border-radius: 50%;
+	top: 50%;
+
+}
+.computer{
+	right: 10%;
+}
+.user{
+	left: 10%;
+}
+.score{
+	display: block;
+	position: relative;
+	top: 100px;
+	text-align:center;
+}
+.scoreofuser{
+	position: absolute;
+	left: 30%;
+	top: 65%; 
+	font-weight: 700;
+	font-size: 30px;
+	color: blue;
+}
+.scoreofpc{
+	position: absolute;
+	right: 30%;
+	top: 65%;
+	font-weight: 700;
+	font-size: 30px;
+	color: blue;
+}
+.playersname{
+	position: absolute;
+	bottom: 0;
+	line-height: 80px;
+	font-family: Courier;
+	font-size: 40px;
+	background-color: red;
+	width: 100%;
+	text-align: center;
+	margin-left: 0;
 }
