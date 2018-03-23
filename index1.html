@@ -5,28 +5,41 @@
 	<title>RockPaperScissor</title>
 </head>
 <body>
-		<img src="RPSon.png" class="volumebutton">
-		<div class="Options">
-			<img src="rock.jpg" class="rock">
-			<img src="paper.jpg" class="paper">
-			<img src="scissor.jpg" class="scissor">
-			<img src="restart.jpg" class="reset">
-		</div>
+		<!-- PC & BOYS ICON  For Rock -->
+		<img src="pc.png" width="30px" height="30px" class="pcicon_R">
+		<img src="boy.jpg" width="30px" height="30px" class="usericon_R">
 
+		<!-- PC & BOYS ICON  For Paper -->
+		<img src="pc.png" width="30px" height="30px" class="pcicon_P">
+		<img src="boy.jpg" width="30px" height="30px" class="usericon_P">
+
+		<!-- PC & BOYS ICON  For Scissor -->
+		<img src="pc.png" width="30px" height="30px" class="pcicon_S">
+		<img src="boy.jpg" width="30px" height="30px" class="usericon_S">
+
+		<!-- Volume Button -->
+		<img src="RPSon.png" class="volumebutton">
+		<!-- OPTIONS -->
+		<div class="Options">
+			<img src="rock.jpg" class="rock" onclick="choserock()">
+			<img src="paper.jpg" class="paper" onclick="chosepaper()">
+			<img src="scissor.jpg" class="scissor" onclick="chosescissor()">
+		</div>
+		<!-- PLAYERS -->
 		<div class="Players">
 			<div><img src="boy.jpg" class="user">
-				<span class="scoreofuser">here</span>
+				<span class="scoreofuser" id="userscore"><img src="RPSon.png" class="volumebutton" width="50px;" height="50px;"></span>
 			</div>
-		<!-- 	<span class="score">
-			<span class="scoreofuser">here</span>
-			<span>:</span>
-			<span class="scoreofpc">here</span>
-			</span> -->
+			<!-- RESET BUTTON -->
+			<div ><img src="restart.jpg" class="reset" onclick="reset()"></div>
+			<!-- COMPUTER -->
 			<div><img src="pc.png" class="computer">
-				<span class="scoreofpc">here</span>
+				<span class="scoreofpc" id="pcscore"><img src="RPSon.png" class="volumebutton" width="50px;" height="50px;"></span>
 			</div>
 		</div>
+		<!-- USER VS PC -->
 		<div class="footer">
 		<div class="playersname">User Vs Pc</div></div>
+		<script type="text/javascript" src="index.js"></script>
 </body>
 </html>

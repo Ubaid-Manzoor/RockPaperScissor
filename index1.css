@@ -1,59 +1,38 @@
 html,body{
 	margin :0;
 	padding: 0;
+	height: 100%;
 }
-.volumebutton{
-	/*display: block;*/
-	width: 5%;
-	height: 5%;
-	background-color: red;
+.pcicon_S,.usericon_S,.pcicon_R,.usericon_R,.pcicon_P,.usericon_P{
 	border-radius: 50%;
-	float: right;
-}
-.Options{
-	position: relative;
-	clear: both;
-	text-align: center;
-	border-bottom: 2px solid red;
-	padding: 2% 1% 2% 1%;
-	margin: 1% 0 1% 0;
-}
-.rock,.paper,.scissor,.reset{
-	border: 2px solid red;
-	display: inline-block;
-	width: 14%;
-	margin-right: 5%;
-	border-radius: 50%;
-}
-.Players{
-	/*position: relative;*/
-}
-.computer,.user{
 	position: absolute;
-	width: 18%;
-	border-radius: 50%;
-	top: 60%;
-
+	display: none;
 }
-.computer{
-	right: 10%;
+.pcicon_R{
+	left: 31%;
+	top: 2%;
 }
-.user{
-	left: 10%;
+.usericon_R{
+	right: 75%;
+	top: 2%;
 }
-.score{
-	display: block;
-	position: relative;
-	top: 100px;
-	text-align:center;
-}html,body{
-	margin 0;
-	padding: 0;
+.pcicon_P{
+	left: 51%;
+	top: 2%;
 }
-.volumebutton{
-	/*display: block;*/
-	width: 5%;
-	height: 5%;
+.usericon_P{
+	right: 56%;
+	top: 2%;
+}
+.usericon_S{
+	right: 36%;
+	top: 2%;
+}
+.pcicon_S{
+	left: 71%;
+	top: 2.5%;
+}
+.volumebutton{	height: 5%;
 	background-color: red;
 	border-radius: 50%;
 	float: right;
@@ -64,24 +43,28 @@ html,body{
 	text-align: center;
 	border-bottom: 2px solid red;
 	padding: 0% 1% 2% 1%;
-	margin: 0% 0 1% 0;
+	margin: 1% 0 1% 0;
 }
-.rock,.paper,.scissor,.reset{
+.rock,.paper,.scissor{
 	border: 2px solid red;
 	display: inline-block;
 	width: 14%;
 	margin-right: 5%;
 	border-radius: 50%;
 }
-.Players{
-	/*position: relative;*/
+.reset{
+	position: absolute;
+	width: 60px;
+	right: 48%;
+	top: 40%;
+	border: 3px solid red;
+	border-radius: 50%;
 }
 .computer,.user{
 	position: absolute;
 	width: 18%;
 	border-radius: 50%;
 	top: 50%;
-
 }
 .computer{
 	right: 10%;
@@ -100,7 +83,7 @@ html,body{
 	left: 30%;
 	top: 65%; 
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 50px;
 	color: blue;
 }
 .scoreofpc{
@@ -108,7 +91,7 @@ html,body{
 	right: 30%;
 	top: 65%;
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 50px;
 	color: blue;
 }
 .playersname{
