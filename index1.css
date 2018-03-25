@@ -14,6 +14,7 @@ body{
 .pcicon_R{
 	left: 31%;
 	top: 2%;
+	border-radius: 0%;
 }
 .usericon_R{
 	right: 75%;
@@ -22,18 +23,20 @@ body{
 .pcicon_P{
 	left: 51%;
 	top: 2%;
+	border-radius: 0%;
 }
 .usericon_P{
 	right: 56%;
 	top: 2%;
 }
 .usericon_S{
-	right: 36%;
+	right: 38%;
 	top: 2%;
 }
 .pcicon_S{
-	left: 71%;
+	left: 70%;
 	top: 2.5%;
+	border-radius: 0%;
 }
 .volumebutton{	height: 5%;
 	background-color: red;
@@ -49,9 +52,9 @@ body{
 	margin: 1% 0 1% 0;
 }
 .rock,.paper,.scissor{
-	border: 2px solid red;
+	border: 2px solid black;
 	display: inline-block;
-	width: 14%;
+	width: 13%;
 	margin-right: 5%;
 	border-radius: 50%;
 }
@@ -60,8 +63,8 @@ body{
 	width: 60px;
 	right: 48%;
 	top: 40%;
-	border: 3px solid red;
-	border-radius: 50%;
+	border: 3px solid #865858;
+	border-radius: 20%;
 }
 .computer,.user{
 	position: absolute;
