@@ -264,11 +264,13 @@ function ChangeStateOfSong() {
 }
 function CheckPlayerInfo()
 {
-	let PlayersName = localStorage.PlayerName;
-	let GenderofPlayer = localStorage.PlayerGender;
+	let PlayersName = sessionStorage.PlayerName;
+	console.log(PlayersName);
+	let GenderofPlayer = sessionStorage.PlayerGender;
 	// let ISplayerfemale = localStorage.PlayerGenderfemale;
-	document.querySelector('.playersname').innerHTML = localStorage.PlayerName + "  " + "VS" +"  " + "PC";
-	if(GenderofPlayer !== "male")
+	console.log(GenderofPlayer);
+	document.querySelector('.playersname').innerHTML = sessionStorage.PlayerName + "  " + "VS" +"  " + "PC";
+	if(GenderofPlayer === "false")
 	{
 		document.querySelector('.user').setAttribute("src","girl.png");
 	}

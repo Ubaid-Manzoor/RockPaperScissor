@@ -4,7 +4,7 @@
 	<title>RockPapperScissor</title>
 	<link rel="stylesheet" type="text/css" href="RockPaperScissor.css">
 </head>
-<body>
+<body onload="MarkAllChecked()";>
 <div class="heading">
 	<p>Play RockPaperScissor </p>
 </div>
@@ -19,17 +19,32 @@
 			<div class="gender">	
 				<span class="Wgender">Gender </span><br>
 				<!-- OPtions for Gender -->
-			    <label class="male">Male <input type="radio" name="Gender" checked></ins></label>
-				<label class="female">Female <input type="radio" name="Gender"></ins></label><br></div>
+			    <label class="male">Male <input  id="MaLe" type="radio" name="Gender" checked value="male" onclick="MarkChecked()";></input></label>
+				<label class="female">Female <input  type="radio" name="Gender" value="female" onclick="MarkUnchecked()"; ></input></label><br></div>
 
 				<!-- BUTTON TO START THE GAME -->
-				<a href="index1.html" class="playgame">Start Game</a>
+				<a href="index1.html" class="playgame" onclick="Makechanges()";>Start Game</a>
 			</fieldset>
 		</form>
 		<script type="text/javascript">
-			localStorage.setItem("PlayerName",document.querySelector('.IPtext').value);
-			localStorage.setItem("PlayerGender",document.querySelector('.male').value);
+		function MarkAllChecked() {
+			document.getElementById("MaLe").checked = true;
+				console.log(document.getElementById("MaLe").checked);
+		}
+		function MarkUnchecked() {
+			document.getElementById("MaLe").checked = false;
+			console.log(document.getElementById("MaLe").checked);
+		}
+			function MarkChecked() {
+				document.getElementById("MaLe").checked = true;
+				console.log(document.getElementById("MaLe").checked);
+			}
+			function Makechanges(argument) {
+			
+			sessionStorage.setItem("PlayerName",document.querySelector('.IPtext').value);
+			sessionStorage.setItem("PlayerGender",document.getElementById("MaLe").checked);}
 			// localStorage.setItem("PlayerGenderfemale",document.querySelector('.female').value);
+			
 		</script>
 	</div>
 </body>
