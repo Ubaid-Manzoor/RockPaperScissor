@@ -23,6 +23,9 @@ function resetallicons() {
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 	ElementofChoise[0].style.display = "none";
 }
+function resetFotter() {
+	document.querySelector('.playersname').innerHTML = sessionStorage.PlayerName + "  " + "VS" +"  " + "PC";
+}
 function Resetscores(argument) {
 		//RESET SCORES
 		Number_of_wins_of_user = 0;
@@ -241,6 +244,7 @@ function chosescissor() {
 function resetall(argument) {
 	resetallicons();
 	Resetscores();
+	resetFotter();
 	let volume = document.querySelector('.song');
 	volume.setAttribute("src","Gamesong.wav");
 }
