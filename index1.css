@@ -60,6 +60,7 @@ body{
 	width: 13%;
 	margin-right: 5%;
 	border-radius: 50%;
+	transition: all 0.1s ease-in-out;
 }
 .scissor:hover{
 	transform:scale(1.1);

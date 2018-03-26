@@ -2,7 +2,7 @@ let choises = ['Rock' , 'Paper' , 'Scissor'];
 let scores = ['zero.jpg' , 'one.jpg' , 'two.jpg' , 'three.jpg'];
 let Number_of_wins_of_user = 0;
 let Number_of_wins_of_pc = 0;
-
+let Stateofbutton = 1;
 
 // <========================================================================>
 // <=====================RESET EVERY CHANGE TO NORMAL=======================>
@@ -34,12 +34,19 @@ function Resetscores(argument) {
 }
 
 function Playwinsong() {
+	if(Stateofbutton !== 0){
 	let volume = document.querySelector('.song');
-	volume.setAttribute("src","winsong.wav");
+	volume.setAttribute("src","winsong.wav");}
 }
 function Playlosesong() {
+	if(Stateofbutton !== 0){
 	let volume = document.querySelector('.song');
-	volume.setAttribute("src","losesound.wav#t=,3");
+	volume.setAttribute("src","losesound.wav#t=,3");}
+}
+function Playdrawsong(argument) {
+	if(Stateofbutton !== 0){
+	let volume = document.querySelector('.song');
+	volume.setAttribute("src","Drawsong.mp3");}
 }
 // <========================================================================>
 // <=====================TO GET RANDOM NUMBER===============================>
@@ -75,12 +82,25 @@ function choserock() {
 
 	}
 	else{
+		let ScoreofPc = document.querySelector('.scoreofpc');
+		let ScoreofUser = document.querySelector('.scoreofuser');
+		Number_of_wins_of_pc++;
+		Number_of_wins_of_user++;
 		ElementofChoise = document.getElementsByClassName("pcicon_R");
 		ElementofChoise[0].style.display = "block";
+		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
+		ScoreofUser.setAttribute("src",scores[Number_of_wins_of_user]);
 	}
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
-	if(Number_of_wins_of_user == 3){
+
+	if(Number_of_wins_of_user == 3 && Number_of_wins_of_pc == 3){
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'DRAW!';
+		Playdrawsong();
+		reset();
+	}
+	else if(Number_of_wins_of_user == 3){
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		Playwinsong();
@@ -122,14 +142,25 @@ function chosepaper(argument) {
 	}
 	else
 	{
+		let ScoreofPc = document.querySelector('.scoreofpc');
+		let ScoreofUser = document.querySelector('.scoreofuser');
+		Number_of_wins_of_pc++;
+		Number_of_wins_of_user++;
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
+		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
+		ScoreofUser.setAttribute("src",scores[Number_of_wins_of_user]);
 	}
 
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
-	
-	if(Number_of_wins_of_user == 3){
+	if(Number_of_wins_of_user == 3 && Number_of_wins_of_pc == 3){
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'DRAW!';
+		Playdrawsong();
+		reset();
+	}
+	else if(Number_of_wins_of_user == 3){
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		console.log("got clicked");
@@ -172,15 +203,26 @@ function chosescissor() {
 		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
 	}
 	else{
+		let ScoreofPc = document.querySelector('.scoreofpc');
+		let ScoreofUser = document.querySelector('.scoreofuser');
+		Number_of_wins_of_pc++;
+		Number_of_wins_of_user++;
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 		ElementofChoise[0].style.display = "block";
+		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
+		ScoreofUser.setAttribute("src",scores[Number_of_wins_of_user]);
 	}
 
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
 
-
-	if(Number_of_wins_of_user == 3){
+	if(Number_of_wins_of_user == 3 && Number_of_wins_of_pc == 3){
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'DRAW!';
+		Playdrawsong();
+		reset();
+	}
+	else if(Number_of_wins_of_user == 3){
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
@@ -203,10 +245,9 @@ function resetall(argument) {
 	volume.setAttribute("src","Gamesong.wav");
 }
 function reset(argument) {
-	resetallicons();
+	// resetallicons();
 	Resetscores();
 }
-let Stateofbutton = 1;
 function ChangeStateOfSong() {
 	let volume = document.querySelector('.song');
 	let VolumeButton = document.querySelector('.volumebutton');
