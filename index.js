@@ -50,7 +50,7 @@ function Playwinsong() {
 function Playlosesong() {
 	if(Stateofbutton !== 0){
 	let volume = document.querySelector('.song');
-	volume.setAttribute("src","losesound.wav#t=,3");}
+	volume.setAttribute("src","losesound.mp3#t=,3");}
 }
 function Playdrawsong(argument) {
 	if(Stateofbutton !== 0){
