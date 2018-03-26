@@ -1,5 +1,5 @@
 let choises = ['Rock' , 'Paper' , 'Scissor'];
-let scores = ['zero.jpg' , 'one.jpg' , 'two.jpg' , 'three.jpg' , 'four.jpg' , 'five.jpg'];
+let scores = ['zero.jpg' , 'one.jpg' , 'two.jpg' , 'three.jpg'];
 let Number_of_wins_of_user = 0;
 let Number_of_wins_of_pc = 0;
 
@@ -80,18 +80,13 @@ function choserock() {
 	}
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
-	if(Number_of_wins_of_pc == 5 && Number_of_wins_of_user == 5)
-	{
-		let MessToUser = document.querySelector(".playersname");
-		MessToUser.innerHTML = 'DRAW';
-	}
-	else if(Number_of_wins_of_user == 5){
+	if(Number_of_wins_of_user == 3){
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		Playwinsong();
 		reset();
 	}
-	else if(Number_of_wins_of_pc == 5)
+	else if(Number_of_wins_of_pc == 3)
 	{
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Lose This Round ';
@@ -134,19 +129,14 @@ function chosepaper(argument) {
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
 	
-	if(Number_of_wins_of_pc == 5 && Number_of_wins_of_user == 5)
-	{
-		let MessToUser = document.querySelector(".playersname");
-		MessToUser.innerHTML = 'DRAW';
-	}
-	else if(Number_of_wins_of_user == 5){
+	if(Number_of_wins_of_user == 3){
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		console.log("got clicked");
 		Playwinsong();
 		reset();
 	}
-	else if(Number_of_wins_of_pc == 5)
+	else if(Number_of_wins_of_pc == 3)
 	{
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = "You Lose This Round ";
@@ -189,19 +179,15 @@ function chosescissor() {
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
 
-	if(Number_of_wins_of_pc == 5 && Number_of_wins_of_user == 5)
-	{
-		let MessToUser = document.querySelector(".playersname");
-		MessToUser.innerHTML = 'DRAW';
-	}
-	else if(Number_of_wins_of_user == 5){
+
+	if(Number_of_wins_of_user == 3){
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		Playwinsong();
 		reset();
 	}
-	else if(Number_of_wins_of_pc == 5)
+	else if(Number_of_wins_of_pc == 3)
 	{
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
