@@ -35,7 +35,13 @@ function Resetscores(argument) {
 	ScoreofUser.setAttribute("src",scores[0]);
 	ScoreofPc.setAttribute("src",scores[0]);
 }
-
+function resetVoiceButton(argument) {
+	if(Stateofbutton == 0){
+		let VolumeButton = document.querySelector('.volumebutton');
+		Stateofbutton == 1 ;
+		VolumeButton.setAttribute("src","RPSon.png");
+	}
+}
 function Playwinsong() {
 	if(Stateofbutton !== 0){
 	let volume = document.querySelector('.song');
@@ -245,6 +251,7 @@ function resetall(argument) {
 	resetallicons();
 	Resetscores();
 	resetFotter();
+	resetVoiceButton();
 	let volume = document.querySelector('.song');
 	volume.setAttribute("src","Gamesong.wav");
 }
