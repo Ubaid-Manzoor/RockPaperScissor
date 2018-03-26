@@ -1,10 +1,15 @@
 let choises = ['Rock' , 'Paper' , 'Scissor'];
+let scores = ['zero.jpg' , 'one.jpg' , 'two.jpg' , 'three.jpg' , 'four.jpg' , 'five.jpg'];
 let Number_of_wins_of_user = 0;
 let Number_of_wins_of_pc = 0;
-let Number_of_rounds = 0;
-let Userwin = 0;
+
+
+// <========================================================================>
+// <=====================RESET EVERY CHANGE TO NORMAL=======================>
 let Allicons = document.getElementsByClassName("commoniconclass");
 function resetallicons() {
+
+
 		let ElementofChoise = document.getElementsByClassName("usericon_R");
 	ElementofChoise[0].style.display = "none";
 		ElementofChoise = document.getElementsByClassName("usericon_P");
@@ -18,53 +23,25 @@ function resetallicons() {
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 	ElementofChoise[0].style.display = "none";
 }
-// function Modify_the_page() {
-// 	if(Userwin){
-// 	switch(Number_of_wins_of_user) {
-//     case 0:
-        
-//         break;
-//     case 1:
-//         break;
-//     case 2:
-//         code block
-//         break;
-//     case 3:
-//         code block
-//         break;
-//     case 4:
-//         code block
-//         break;
-//     case 5:
-//         code block
-//         break;
-// 	} }
-// 	else{
-// 			switch(Number_of_wins_of_user) {
-//     case 0:
-//         code block
-//         break;
-//     case 1:
-//         code block
-//         break;
-//     case 2:
-//         code block
-//         break;
-//     case 3:
-//         code block
-//         break;
-//     case 4:
-//         code block
-//         break;
-//     case 5:
-//         code block
-//         break;
-// 	}
-// }
+function Resetscores(argument) {
+		//RESET SCORES
+		Number_of_wins_of_user = 0;
+		Number_of_wins_of_pc = 0;
+	let ScoreofUser = document.querySelector('.scoreofuser');
+	let ScoreofPc = document.querySelector('.scoreofpc');
+	ScoreofUser.setAttribute("src",scores[0]);
+	ScoreofPc.setAttribute("src",scores[0]);
+}
+
+// <========================================================================>
+// <=====================TO GET RANDOM NUMBER===============================>
+
 function getrandomnum(number) {
 	return Math.floor(Math.random() * number);
 }
-function choserock(argument) {
+// <========================================================================>
+// <=====================CHOSEROCK==========================================>
+function choserock() {
 	resetallicons();
 	let ElementofChoise = document.getElementsByClassName("usericon_R");
 	ElementofChoise[0].style.display = "block";
@@ -73,27 +50,48 @@ function choserock(argument) {
 	if(choises[pcchoise] === 'Scissor')
 	{
 		//Player Won;
+		console.log('got clicked');
+		let ScoreofUser = document.querySelector('.scoreofuser');
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 		ElementofChoise[0].style.display = "block";
 		Number_of_wins_of_user++;
-		Number_of_rounds++;
-		Userwin = 1;
+		ScoreofUser.setAttribute("src",scores[Number_of_wins_of_user]);
+
 	}
 	else if(choises[pcchoise] === 'Paper')
 	{
 		//Pc won
+		console.log('got clicked');
+		let ScoreofPc = document.querySelector('.scoreofpc');
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
 		Number_of_wins_of_pc++;
-		Number_of_rounds++;
-		Userwin = 0;
+		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
+
 	}
 	else{
 		ElementofChoise = document.getElementsByClassName("pcicon_R");
 		ElementofChoise[0].style.display = "block";
 	}
+// <=========================================================>
+// <=====================DISPLAY THE RESULTS=================>
 
+	if(Number_of_wins_of_user == 5){
+		console.log("got clicked");
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'You Won This Round!';
+		reset();
+	}
+	else if(Number_of_wins_of_pc == 5)
+	{
+		console.log("got clicked");
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'You Lose This Round ';
+		reset();
+	}
 }
+// <========================================================================>
+// <=====================CHOSEPAPER=========================================>
 function chosepaper(argument) {
 	resetallicons();
 	let ElementofChoise = document.getElementsByClassName("usericon_P");
@@ -102,58 +100,103 @@ function chosepaper(argument) {
 	let pcchoise = getrandomnum(3);
 	if(choises[pcchoise] === 'Rock')
 	{
+		//Player Won;
+		console.log("got clicked");
+		let ScoreofUser = document.querySelector('.scoreofuser');
 		ElementofChoise = document.getElementsByClassName("pcicon_R");
 		ElementofChoise[0].style.display = "block";
-		//Player Won;
 		Number_of_wins_of_user++;
-		Number_of_rounds++;
-		Userwin = 1;
+		ScoreofUser.setAttribute("src",scores[Number_of_wins_of_user]);
+
 	}
 	else if(choises[pcchoise] === 'Scissor')
 	{
+		//Pc won
+		let ScoreofPc = document.querySelector('.scoreofpc');
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 		ElementofChoise[0].style.display = "block";
-		//Pc won
 		Number_of_wins_of_pc++;
-		Number_of_rounds++;
-		Userwin = 0;
+		console.log("got clicked");
+		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
 	}
 	else
 	{
+		console.log("got clicked");
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
 	}
+
+// <=========================================================>
+// <=====================DISPLAY THE RESULTS=================>
+
+	if(Number_of_wins_of_user == 5){
+		console.log("got clicked");
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'You Won This Round!';
+		console.log("got clicked");
+		reset();
+	}
+	else if(Number_of_wins_of_pc == 5)
+	{
+		console.log("got clicked");
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = "You Lose This Round ";
+		console.log("got clicked");
+		reset();
+	}
 }
-function chosescissor(argument) {
+// <========================================================================>
+// <=====================CHOSESCISSOR=======================================>
+function chosescissor() {
 	//First reset all icons to display none
 	resetallicons();
 	ElementofChoise = document.getElementsByClassName("usericon_S");
-	ElementofChoise[0].style.display = "block";
 	console.log("got clicked");
+	ElementofChoise[0].style.display = "block";
 	let pcchoise = getrandomnum(3);
 	if(choises[pcchoise] === 'Paper')
 	{
+		//Player Won;
+		console.log("got clicked");
+			let ScoreofUser = document.querySelector('.scoreofuser');
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
-		//Player Won;
 		Number_of_wins_of_user++;
-		Number_of_rounds++;
-		Userwin = 1;
+		ScoreofUser.setAttribute("src",scores[Number_of_wins_of_user]);
+
 	}
 	else if(choises[pcchoise] === 'Rock')
 	{
+		console.log("got clicked");
+		//Pc won
+			let ScoreofPc = document.querySelector('.scoreofpc');
 		ElementofChoise = document.getElementsByClassName("pcicon_R");
 		ElementofChoise[0].style.display = "block";
-		//Pc won
 		Number_of_wins_of_pc++;
-		Number_of_rounds++;
-		Userwin = 0;
+		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
 	}
 	else{
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 		ElementofChoise[0].style.display = "block";
 	}
+
+// <=========================================================>
+// <=====================DISPLAY THE RESULTS=================>
+	if(Number_of_wins_of_user == 5){
+		console.log("got clicked");
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'You Won This Round!';
+		reset();
+	}
+	else if(Number_of_wins_of_pc == 5)
+	{
+		console.log("got clicked");
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'You Lose This Round';
+		reset();
+	}
 }
 function reset(argument) {
 	resetallicons();
+	Resetscores();
 }
