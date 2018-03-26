@@ -14,7 +14,7 @@
 				<legend align="center">General Information</legend>
 
 				<!-- UserName -->
-			<div class="Name"><label class="name"><span class="username">UserName</span> <br><input type="Text" name="UserName" value="" class="IPtext"></label><br></div>
+			<div class="Name"><label class="name"><span class="username">UserName</span> <br><input type="Text" name="UserName" value="User" class="IPtext"></label><br></div>
 
 			<div class="gender">	
 				<span class="Wgender">Gender </span><br>
@@ -26,7 +26,11 @@
 				<a href="index1.html" class="playgame">Start Game</a>
 			</fieldset>
 		</form>
-		
+		<script type="text/javascript">
+			localStorage.setItem("PlayerName",document.querySelector('.IPtext').value);
+			localStorage.setItem("PlayerGender",document.querySelector('.male').value);
+			// localStorage.setItem("PlayerGenderfemale",document.querySelector('.female').value);
+		</script>
 	</div>
 </body>
 </html>

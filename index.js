@@ -262,3 +262,14 @@ function ChangeStateOfSong() {
 		volume.play();
 	}
 }
+function CheckPlayerInfo()
+{
+	let PlayersName = localStorage.PlayerName;
+	let GenderofPlayer = localStorage.PlayerGender;
+	// let ISplayerfemale = localStorage.PlayerGenderfemale;
+	document.querySelector('.playersname').innerHTML = localStorage.PlayerName + "  " + "VS" +"  " + "PC";
+	if(GenderofPlayer !== "male")
+	{
+		document.querySelector('.user').setAttribute("src","girl.png");
+	}
+}
