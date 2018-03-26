@@ -33,6 +33,14 @@ function Resetscores(argument) {
 	ScoreofPc.setAttribute("src",scores[0]);
 }
 
+function Playwinsong() {
+	let volume = document.querySelector('.song');
+	volume.setAttribute("src","winsong.wav");
+}
+function Playlosesong() {
+	let volume = document.querySelector('.song');
+	volume.setAttribute("src","losesound.wav#t=,3");
+}
 // <========================================================================>
 // <=====================TO GET RANDOM NUMBER===============================>
 
@@ -45,12 +53,10 @@ function choserock() {
 	resetallicons();
 	let ElementofChoise = document.getElementsByClassName("usericon_R");
 	ElementofChoise[0].style.display = "block";
-	console.log("got clicked");
 	let pcchoise = getrandomnum(3);
 	if(choises[pcchoise] === 'Scissor')
 	{
 		//Player Won;
-		console.log('got clicked');
 		let ScoreofUser = document.querySelector('.scoreofuser');
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 		ElementofChoise[0].style.display = "block";
@@ -61,7 +67,6 @@ function choserock() {
 	else if(choises[pcchoise] === 'Paper')
 	{
 		//Pc won
-		console.log('got clicked');
 		let ScoreofPc = document.querySelector('.scoreofpc');
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
@@ -75,18 +80,22 @@ function choserock() {
 	}
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
-
-	if(Number_of_wins_of_user == 5){
-		console.log("got clicked");
+	if(Number_of_wins_of_pc == 5 && Number_of_wins_of_user == 5)
+	{
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'DRAW';
+	}
+	else if(Number_of_wins_of_user == 5){
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
+		Playwinsong();
 		reset();
 	}
 	else if(Number_of_wins_of_pc == 5)
 	{
-		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Lose This Round ';
+		Playlosesong();
 		reset();
 	}
 }
@@ -96,12 +105,10 @@ function chosepaper(argument) {
 	resetallicons();
 	let ElementofChoise = document.getElementsByClassName("usericon_P");
 	ElementofChoise[0].style.display = "block";
-	console.log("got clicked");
 	let pcchoise = getrandomnum(3);
 	if(choises[pcchoise] === 'Rock')
 	{
 		//Player Won;
-		console.log("got clicked");
 		let ScoreofUser = document.querySelector('.scoreofuser');
 		ElementofChoise = document.getElementsByClassName("pcicon_R");
 		ElementofChoise[0].style.display = "block";
@@ -116,32 +123,34 @@ function chosepaper(argument) {
 		ElementofChoise = document.getElementsByClassName("pcicon_S");
 		ElementofChoise[0].style.display = "block";
 		Number_of_wins_of_pc++;
-		console.log("got clicked");
 		ScoreofPc.setAttribute("src",scores[Number_of_wins_of_pc]);
 	}
 	else
 	{
-		console.log("got clicked");
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
 	}
 
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
-
-	if(Number_of_wins_of_user == 5){
-		console.log("got clicked");
+	
+	if(Number_of_wins_of_pc == 5 && Number_of_wins_of_user == 5)
+	{
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'DRAW';
+	}
+	else if(Number_of_wins_of_user == 5){
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		console.log("got clicked");
+		Playwinsong();
 		reset();
 	}
 	else if(Number_of_wins_of_pc == 5)
 	{
-		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = "You Lose This Round ";
-		console.log("got clicked");
+		Playlosesong();
 		reset();
 	}
 }
@@ -151,13 +160,11 @@ function chosescissor() {
 	//First reset all icons to display none
 	resetallicons();
 	ElementofChoise = document.getElementsByClassName("usericon_S");
-	console.log("got clicked");
 	ElementofChoise[0].style.display = "block";
 	let pcchoise = getrandomnum(3);
 	if(choises[pcchoise] === 'Paper')
 	{
 		//Player Won;
-		console.log("got clicked");
 			let ScoreofUser = document.querySelector('.scoreofuser');
 		ElementofChoise = document.getElementsByClassName("pcicon_P");
 		ElementofChoise[0].style.display = "block";
@@ -167,7 +174,6 @@ function chosescissor() {
 	}
 	else if(choises[pcchoise] === 'Rock')
 	{
-		console.log("got clicked");
 		//Pc won
 			let ScoreofPc = document.querySelector('.scoreofpc');
 		ElementofChoise = document.getElementsByClassName("pcicon_R");
@@ -182,10 +188,17 @@ function chosescissor() {
 
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
-	if(Number_of_wins_of_user == 5){
+
+	if(Number_of_wins_of_pc == 5 && Number_of_wins_of_user == 5)
+	{
+		let MessToUser = document.querySelector(".playersname");
+		MessToUser.innerHTML = 'DRAW';
+	}
+	else if(Number_of_wins_of_user == 5){
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
+		Playwinsong();
 		reset();
 	}
 	else if(Number_of_wins_of_pc == 5)
@@ -193,10 +206,32 @@ function chosescissor() {
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Lose This Round';
+		Playlosesong();
 		reset();
 	}
+}
+function resetall(argument) {
+	resetallicons();
+	Resetscores();
+	let volume = document.querySelector('.song');
+	volume.setAttribute("src","Gamesong.wav");
 }
 function reset(argument) {
 	resetallicons();
 	Resetscores();
+}
+let Stateofbutton = 1;
+function ChangeStateOfSong() {
+	let volume = document.querySelector('.song');
+	let VolumeButton = document.querySelector('.volumebutton');
+	if(Stateofbutton == 1){
+	volume.pause();
+	Stateofbutton = 0;
+	VolumeButton.setAttribute("src","RPS.png");
+}
+	else{
+		VolumeButton.setAttribute("src","RPSon.png");
+		Stateofbutton = 1;
+		volume.play();
+	}
 }

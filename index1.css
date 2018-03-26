@@ -61,6 +61,24 @@ body{
 	margin-right: 5%;
 	border-radius: 50%;
 }
+.scissor:hover{
+	transform:scale(1.1);
+}
+.rock:hover{
+	transform:scale(1.1);
+}
+.paper:hover{
+	transform:scale(1.1);
+}
+.rock:active{
+	transform: scale(1);
+}
+.paper:active{
+	transform: scale(1);
+}
+.scissor:active{
+	transform: scale(1);
+}
 .reset{
 	position: absolute;
 	width: 60px;
@@ -68,6 +86,12 @@ body{
 	top: 40%;
 	border: 3px solid #865858;
 	border-radius: 20%;
+}
+.reset:hover{
+	transform: scale(1.1);
+}
+.reset:active{
+	transform: scale(1);
 }
 .computer,.user{
 	position: absolute;

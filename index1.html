@@ -5,38 +5,38 @@
 	<title>RockPaperScissor</title>
 </head>
 <body>
-		<audio src="">
+		<audio src="Gamesong.wav" autoplay  class="song">
 		</audio>
 		<!-- PC & BOYS ICON  For Rock -->
-		<img src="pc.png" width="30px" height="30px" class="pcicon_R">
-		<img src="boy.jpg" width="30px" height="30px" class="usericon_R">
+		<img src="pc.png" width="30px" height="30px" alt="" class="pcicon_R">
+		<img src="boy.jpg" width="30px" height="30px" alt="" class="usericon_R">
 
 		<!-- PC & BOYS ICON  For Paper -->
-		<img src="pc.png" width="30px" height="30px" class="pcicon_P">
-		<img src="boy.jpg" width="30px" height="30px" class="usericon_P">
+		<img src="pc.png" width="30px" height="30px" alt="" class="pcicon_P">
+		<img src="boy.jpg" width="30px" height="30px" alt="" class="usericon_P">
 
 		<!-- PC & BOYS ICON  For Scissor -->
-		<img src="pc.png" width="30px" height="30px" class="pcicon_S">
-		<img src="boy.jpg" width="30px" height="30px" class="usericon_S">
+		<img src="pc.png" width="30px" height="30px" alt="" class="pcicon_S">
+		<img src="boy.jpg" width="30px" height="30px" alt="" class="usericon_S">
 
 		<!-- Volume Button -->
-		<img src="RPSon.png" class="volumebutton">
+		<img src="RPSon.png" class="volumebutton" alt="" onclick="ChangeStateOfSong()">
 		<!-- OPTIONS -->
 		<div class="Options">
-			<img src="rock.jpg" class="rock" onclick="choserock()">
-			<img src="paper.jpg" class="paper" onclick="chosepaper()">
-			<img src="scissor.jpg" class="scissor" onclick="chosescissor()">
+			<img src="rock.jpg" class="rock" alt="" onclick="choserock()">
+			<img src="paper.jpg" class="paper" alt="" onclick="chosepaper()">
+			<img src="scissor.jpg" class="scissor" alt="" onclick="chosescissor()">
 		</div>
 		<!-- PLAYERS -->
 		<div class="Players">
-			<div><img src="boy.jpg" class="user">
+			<div><img src="boy.jpg" class="user" alt="">
 				<span  id="userscore"><img src="zero.jpg" class="scoreofuser"></span>
 			</div>
 			<!-- RESET BUTTON -->
-			<div ><img src="restart.jpg" class="reset" onclick="reset()"></div>
+			<div ><img src="restart.jpg" class="reset" alt="" onclick="resetall()"></div>
 			<!-- COMPUTER -->
 			<div><img src="pc.png" class="computer">
-				<span  id="pcscore"><img src="zero.jpg" class="scoreofpc"></span>
+				<span  id="pcscore"><img src="zero.jpg" alt="" class="scoreofpc"></span>
 			</div>
 		</div>
 		<!-- USER VS PC -->
