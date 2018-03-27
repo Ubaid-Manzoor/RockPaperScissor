@@ -3,10 +3,12 @@ let scores = ['zero.jpg' , 'one.jpg' , 'two.jpg' , 'three.jpg'];
 let Number_of_wins_of_user = 0;
 let Number_of_wins_of_pc = 0;
 let Stateofbutton = 1;
-
+let helper = 0;
 // <========================================================================>
 // <=====================RESET EVERY CHANGE TO NORMAL=======================>
 let Allicons = document.getElementsByClassName("commoniconclass");
+
+
 function resetallicons() {
 
 
@@ -66,6 +68,9 @@ function getrandomnum(number) {
 // <========================================================================>
 // <=====================CHOSEROCK==========================================>
 function choserock() {
+	if(helper == 3){
+		AfterEachRound();
+	}
 	resetallicons();
 	let ElementofChoise = document.getElementsByClassName("usericon_R");
 	ElementofChoise[0].style.display = "block";
@@ -104,12 +109,14 @@ function choserock() {
 // <=====================DISPLAY THE RESULTS=================>
 
 	if(Number_of_wins_of_user == 3 && Number_of_wins_of_pc == 3){
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'DRAW!';
 		Playdrawsong();
 		reset();
 	}
 	else if(Number_of_wins_of_user == 3){
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		Playwinsong();
@@ -117,6 +124,7 @@ function choserock() {
 	}
 	else if(Number_of_wins_of_pc == 3)
 	{
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Lose This Round ';
 		Playlosesong();
@@ -126,6 +134,9 @@ function choserock() {
 // <========================================================================>
 // <=====================CHOSEPAPER=========================================>
 function chosepaper(argument) {
+	if(helper == 3){
+		AfterEachRound();
+	}
 	resetallicons();
 	let ElementofChoise = document.getElementsByClassName("usericon_P");
 	ElementofChoise[0].style.display = "block";
@@ -164,12 +175,14 @@ function chosepaper(argument) {
 // <=========================================================>
 // <=====================DISPLAY THE RESULTS=================>
 	if(Number_of_wins_of_user == 3 && Number_of_wins_of_pc == 3){
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'DRAW!';
 		Playdrawsong();
 		reset();
 	}
 	else if(Number_of_wins_of_user == 3){
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
 		console.log("got clicked");
@@ -178,6 +191,7 @@ function chosepaper(argument) {
 	}
 	else if(Number_of_wins_of_pc == 3)
 	{
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = "You Lose This Round ";
 		Playlosesong();
@@ -187,6 +201,9 @@ function chosepaper(argument) {
 // <========================================================================>
 // <=====================CHOSESCISSOR=======================================>
 function chosescissor() {
+	if(helper == 3){
+		AfterEachRound();
+	}
 	//First reset all icons to display none
 	resetallicons();
 	ElementofChoise = document.getElementsByClassName("usericon_S");
@@ -226,12 +243,14 @@ function chosescissor() {
 // <=====================DISPLAY THE RESULTS=================>
 
 	if(Number_of_wins_of_user == 3 && Number_of_wins_of_pc == 3){
+		helper = 3;
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'DRAW!';
 		Playdrawsong();
 		reset();
 	}
 	else if(Number_of_wins_of_user == 3){
+		helper = 3;
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Won This Round!';
@@ -240,6 +259,7 @@ function chosescissor() {
 	}
 	else if(Number_of_wins_of_pc == 3)
 	{
+		helper = 3;
 		console.log("got clicked");
 		let MessToUser = document.querySelector(".playersname");
 		MessToUser.innerHTML = 'You Lose This Round';
@@ -253,7 +273,7 @@ function resetall(argument) {
 	resetFotter();
 	resetVoiceButton();
 	let volume = document.querySelector('.song');
-	volume.setAttribute("src","Gamesong.wav");
+	volume.setAttribute("src","Gamesong.mp3");
 }
 function reset(argument) {
 	// resetallicons();
@@ -272,6 +292,14 @@ function ChangeStateOfSong() {
 		Stateofbutton = 1;
 		volume.play();
 	}
+}
+function AfterEachRound() {
+	console.log("Hereeeeeeee");
+	resetFotter();
+	Resetscores();
+	let volume = document.querySelector('.song');
+	volume.setAttribute("src","Gamesong.mp3");
+	helper = 0;
 }
 function CheckPlayerInfo()
 {

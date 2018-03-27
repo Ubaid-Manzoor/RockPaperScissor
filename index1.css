@@ -45,7 +45,15 @@ body{
 	float: right;
 	margin-top: 5px;
 	margin-right: 5px;
+	transition: all 0.1s ease-in-out;
 }
+.volumebutton:hover{
+	transform: scale(1.1);
+}
+.volumebutton:active{
+	transform: scale(1);
+}
+
 .Options{
 	position: relative;
 	clear: both;
@@ -87,6 +95,7 @@ body{
 	top: 40%;
 	border: 3px solid #865858;
 	border-radius: 20%;
+	transition: all 0.1s ease-in-out;
 }
 .reset:hover{
 	transform: scale(1.1);
