@@ -297,8 +297,9 @@ function AfterEachRound() {
 	console.log("Hereeeeeeee");
 	resetFotter();
 	Resetscores();
+	if(Stateofbutton == 1){
 	let volume = document.querySelector('.song');
-	volume.setAttribute("src","Gamesong.mp3");
+	volume.setAttribute("src","Gamesong.mp3");}
 	helper = 0;
 }
 function CheckPlayerInfo()
